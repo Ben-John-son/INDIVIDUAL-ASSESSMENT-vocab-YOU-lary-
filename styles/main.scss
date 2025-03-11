@@ -3,8 +3,83 @@
 
 
 body {
-  background-color: antiquewhite;
+  background-color: rgb(230, 152, 50);
   color: brown;
   text-align: center;
   margin-top: 100px;
+}
+
+#navigation {
+  display: flex;
+  flex-direction: row;
+  justify-items: flex-start;
+  justify-content: center;
+  border: 1px black solid;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-top: 0px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+#navFilters {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: flex-start;
+  gap: 40px;
+}
+
+#view {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+gap: 10px;
+}
+
+#viewTwo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  flex-wrap: wrap;
+margin-top: 20px;
+gap: 10px;
+}
+
+button {
+  width: 150px!important;
+}
+
+#formId {
+  border: solid 1px black;
+  width: 45%;
+  height: auto;
+  background-color: rgb(152, 20, 192);
+  color: white;
+  font-size: 20px;
+}
+
+select {
+  margin-top: 10px;
+}
+
+#newwTech {
+  margin-top: 20px;
 }
