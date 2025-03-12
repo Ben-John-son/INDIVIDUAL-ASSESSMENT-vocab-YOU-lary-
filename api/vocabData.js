@@ -72,7 +72,20 @@ const techButton = () => new Promise((resolve, reject) => {
 });
 
 const createLanguageCard = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}.json`, {
+  fetch(`${endpoint}/language.json`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data))
+    .catch(reject);
+});
+
+const createTechCard = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/tech.json`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -85,7 +98,20 @@ const createLanguageCard = (payload) => new Promise((resolve, reject) => {
 });
 
 const updateCard = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/${payload.firebaseKey}.json`, {
+  fetch(`${endpoint}/language/${payload.firebaseKey}.json`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((response) => response.json())
+    .then(resolve)
+    .catch(reject);
+});
+
+const upddateTechCard = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/tech/${payload.firebaseKey}.json`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -98,5 +124,5 @@ const updateCard = (payload) => new Promise((resolve, reject) => {
 });
 
 export {
-  getLanguage, getTech, languageBtn, techButton, createLanguageCard, updateCard
+  getLanguage, getTech, languageBtn, techButton, createLanguageCard, updateCard, createTechCard, upddateTechCard
 };

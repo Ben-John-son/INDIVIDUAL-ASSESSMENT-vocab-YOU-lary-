@@ -2,17 +2,19 @@ import renderToDom from '../sample_data/render';
 import clearDom from '../sample_data/clearDom';
 
 const newTechForm = () => {
-  const domString = `
-  <div id='formId' class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Title</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Title">
-  <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-
-<button id='submitBtn' type="submit" class="btn btn-primary mb-3">Submit</button>
-</div>`;
   clearDom();
-  renderToDom('#viewTwo', domString);
+  const domString = `
+  <form id='submitTech'>
+  <label for="titleTech" class="form-label">Title</label>
+  <input type="text" class="form-control" id="titleTech" placeholder="Title">
+  <label for="descriptionTech" class="form-label">Description</label>
+  <textarea class="form-control" id="descriptionTech" rows="3"></textarea>
+  <label for="techInput" class="form-label">Language</label>
+  <input type="text" class="form-control" id="techInput" placeholder="Title">
+<button type="submit" class="btn btn-primary mb-3">Submit</button>
+</form>`;
+
+  renderToDom('#form-containerTwo', domString);
 };
 
 export default newTechForm;
