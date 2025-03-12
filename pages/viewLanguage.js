@@ -1,5 +1,4 @@
 import renderToDom from '../utils/sample_data/render';
-// import { getLanguage } from '../api/vocabData';
 
 const showLanguage = (obj) => {
   let domString = '';

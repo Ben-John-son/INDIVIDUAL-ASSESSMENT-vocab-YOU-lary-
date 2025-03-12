@@ -1,17 +1,18 @@
 import renderToDom from '../sample_data/render';
-import clearDom from '../sample_data/clearDom';
+// import clearDom from '../sample_data/clearDom';
 
 const newLangForm = () => {
   const domString = `
-  <div id='formId' class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Title</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Title">
-  <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-<button id='submitBtn' type="submit" class="btn btn-primary mb-3">Submit</button>
-</div>`;
-  clearDom();
-  renderToDom('#view', domString);
+ <form id="submitLang">
+  <label for="titleInput" class="form-label">Title</label>
+  <input type="text" class="form-control" id="titleInput" placeholder="Title">
+  <label for="descriptionInput" class="form-label">Description</label>
+  <textarea class="form-control" id="descriptionInput" rows="3"></textarea>
+  <label for="languageInput" class="form-label">Language</label>
+  <input type="text" class="form-control" id="languageInput" placeholder="Title">
+<button type="submit" class="btn btn-primary mb-3">Submit</button>
+</form>`;
+  renderToDom('#form-container', domString);
 };
 
 export default newLangForm;
