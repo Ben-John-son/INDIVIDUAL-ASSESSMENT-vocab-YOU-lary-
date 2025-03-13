@@ -1,9 +1,9 @@
 import renderToDom from '../sample_data/render';
 // import clearDom from '../sample_data/clearDom';
 
-const newLangForm = () => {
+const newLangForm = (obj = {}) => {
   const domString = `
- <form id="submitLang">
+ <form id="${obj.firebaseKey ? `update-language--${obj.firebaseKey}` : 'submitLang'}">
   <label for="titleInput" class="form-label">Title</label>
   <input type="text" class="form-control" id="titleInput" placeholder="Title">
   <label for="descriptionInput" class="form-label">Description</label>
