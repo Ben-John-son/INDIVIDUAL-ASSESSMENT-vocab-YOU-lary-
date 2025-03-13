@@ -49,6 +49,24 @@ const formSubmit = () => {
       });
     }
   });
+
+  document.querySelector('#form-container').addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (e.target.id.includes('update-language')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      const payload = {
+        title: document.querySelector('#titleInput').value,
+        description: document.querySelector('#descriptionInput').value,
+        category: 'Language',
+        language: document.querySelector('#languageInput').value,
+        favorite: true,
+        firebaseKey
+      };
+      updateCard(payload).then(() => {
+        getLanguage().then(showLanguage);
+      });
+    }
+  });
 };
 
 export default formSubmit;

@@ -123,6 +123,30 @@ const upddateTechCard = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getSingleLanguage = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/language/${firebaseKey}.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data)) // will resolve a single object
+    .catch(reject);
+});
+
+const deleteLanguage = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/language/${firebaseKey}.json`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((books) => resolve(books))
+    .catch(reject);
+});
+
 export {
-  getLanguage, getTech, languageBtn, techButton, createLanguageCard, updateCard, createTechCard, upddateTechCard
+  getLanguage, getTech, languageBtn, techButton, createLanguageCard, updateCard, createTechCard, upddateTechCard, getSingleLanguage, deleteLanguage
 };

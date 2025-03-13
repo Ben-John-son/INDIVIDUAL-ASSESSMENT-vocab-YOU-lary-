@@ -8,8 +8,8 @@ const showLanguage = (obj) => {
     <h5 class="card-title">${item.title}</h5>
     <h6 class="card-subtitle mb-2 text-body-secondary">${item.category}</h6>
     <p class="card-text">${item.description}</p>
-    <a href="#" class="card-link">Edit</a>
-    <a href="#" class="card-link">Delete</a>
+    <a id="edit-language--${item.firebaseKey}" href="#" class="card-link">Edit</a>
+    <a id="delete-language--${item.firebaseKey}" href="#" class="card-link">Delete</a>
   </div>
 </div>`;
   });
@@ -24,8 +24,8 @@ const showTech = (obj) => {
     <h5 class="card-title">${item.title}</h5>
     <h6 class="card-subtitle mb-2 text-body-secondary">${item.category}</h6>
     <p class="card-text">${item.description}</p>
-    <a href="#" class="card-link">Edit</a>
-    <a href="#" class="card-link">Delete</a>
+    <a id="edit-tech" href="#" class="card-link">Edit</a>
+    <a id="delete-tech" href="#" class="card-link">Delete</a>
   </div>
 </div>`;
   });
